@@ -10,40 +10,51 @@
 
     <style>
         body {
-            background-color: #fff8f4;
+            background-color: #f6f5f2; /* Off-white background */
             font-family: 'Poppins', sans-serif;
+            color: #333333; /* Dark grey text */
         }
 
         .profile-card {
             background: #ffffff;
             border-radius: 20px;
-            padding: 30px;
+            padding: 80px 30px 30px; /* Extra top padding for overlapping image */
             box-shadow: 0 8px 25px rgba(0,0,0,0.1);
             text-align: center;
-        }
-
-        .profile-pic {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 6px solid #ffb6c1;
-            margin-bottom: 15px;
+            color: #333;
+            margin-top: 100px; /* Push card down */
         }
 
         .hero {
-            background: url('banner.jpg') center/cover no-repeat;
-            height: 350px;
+            background: linear-gradient(to bottom, #333333, #cccccc);
+            height: 250px;
             position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
+        .hero-slogan {
+    color: white;
+    font-size: 2rem;
+    font-weight: 600;
+    z-index: 10;
+    text-align: center;
+    position: absolute;
+    top: 40px;
+    width: 100%;
+}
 
-        .hero-overlay {
+
+        /* Centered hero profile picture */
+        .hero-profile {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid #ffb6c1;
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 192, 203, 0.3);
+            bottom: -80px;
+            z-index: 10;
         }
 
         .section-title {
@@ -51,7 +62,7 @@
             font-size: 1.8rem;
             margin-bottom: 20px;
             text-align: center;
-            color: #f77fa5;
+            color: #444;
         }
 
         .cake-img {
@@ -61,100 +72,86 @@
             object-fit: cover;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             cursor: pointer;
-            transition: transform 0.2s;
         }
 
-        .cake-img:hover {
-            transform: scale(1.02);
+        .btn-custom {
+            background-color: #595959;
+            color: white;
+            border-radius: 30px;
+            padding: 10px 25px;
+            border: none;
         }
 
-        .btn-pink {
-            background-color: #ff85a2;
+        .btn-custom:hover {
+            background-color: #444;
+        }
+
+        .btn-resume {
+            background-color: #8c8c8c;
             color: white;
             border-radius: 30px;
             padding: 10px 25px;
         }
 
-        .btn-pink:hover {
-            background-color: #ff6a8a;
+        .btn-resume:hover {
+            background-color: #6e6e6e;
         }
 
-        /* Social icons */
         .social-icons img {
             width: 40px;
             height: 40px;
             margin: 0 10px;
             cursor: pointer;
             transition: transform 0.2s;
-            filter: drop-shadow(0px 0px 3px rgba(0,0,0,0.2));
+            filter: brightness(0) invert(0.3); /* Dark grey icons */
         }
 
         .social-icons img:hover {
             transform: scale(1.12);
-        }
-
-        /* Footer */
-        footer {
-            background-color: #ffdee6;
-            padding: 25px 0;
-            text-align: center;
-            margin-top: 60px;
-        }
-
-        footer p {
-            margin: 0;
-            color: #444;
-        }
-
-        footer .footer-icons img {
-            width: 35px;
-            margin: 0 8px;
-            filter: drop-shadow(0px 0px 2px rgba(0,0,0,0.2));
-            cursor: pointer;
-            transition: 0.2s;
-        }
-
-        footer .footer-icons img:hover {
-            transform: scale(1.1);
         }
     </style>
 </head>
 <body>
 
     <!-- HERO BANNER -->
-    <div class="hero">
-        <div class="hero-overlay"></div>
-    </div>
+<div class="hero">
+    <h1 class="hero-slogan">“Sweet Creations Made With Love”</h1>
+    <img src="profile.jpeg" class="hero-profile" alt="Profile Picture">
+</div>
+
 
     <div class="container py-5">
 
         <!-- PROFILE CARD -->
         <div class="profile-card mb-5 mx-auto" style="max-width: 600px;">
-            <img src="profile.jpeg" alt="Profile Picture" class="profile-pic">
 
             <h2 class="fw-bold">Agaypang Agoroy’s Cake Creations</h2>
             <p class="text-muted">Cake Coverer • Cake Decorator • Custom Cake Designer</p>
 
-            <button class="btn btn-pink mt-2">Contact Me</button>
+            <!-- BUTTONS -->
+            <div class="d-flex justify-content-center gap-3 mt-3">
+                <a href="https://wa.me/97466267446" target="_blank" class="btn btn-custom">
+    Contact Me on WhatsApp
+</a>
+
+
+                <!-- Resume Button -->
+                <a href="resume.pdf" class="btn btn-resume">View Resume</a>
+            </div>
 
             <!-- SOCIAL MEDIA SECTION -->
             <div class="social-icons mt-4">
-
-                <!-- Facebook -->
-                <a href="https://facebook.com/" target="_blank">
+                <a href="https://www.facebook.com/estolonio.abella.nelgen">
                     <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/facebook.svg" alt="Facebook">
                 </a>
 
-                <!-- Instagram -->
                 <a href="https://instagram.com/" target="_blank">
                     <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/instagram.svg" alt="Instagram">
                 </a>
 
-                <!-- TikTok -->
                 <a href="https://tiktok.com/" target="_blank">
                     <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/tiktok.svg" alt="TikTok">
                 </a>
-
             </div>
         </div>
 
@@ -196,21 +193,9 @@
         </div>
     </div>
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="footer-icons mb-2">
-            <a href="https://facebook.com/" target="_blank">
-                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/facebook.svg" alt="FB">
-            </a>
-            <a href="https://instagram.com/" target="_blank">
-                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/instagram.svg" alt="IG">
-            </a>
-            <a href="https://tiktok.com/" target="_blank">
-                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/tiktok.svg" alt="TikTok">
-            </a>
-        </div>
-
-        <p>© 2025 Agaypang Agoroy’s Cake Creations • All Rights Reserved</p>
+    <!-- Footer -->
+    <footer class="bg-dark text-center text-secondary py-3">
+        <p class="mb-0">© 2025 <span class="text-info">Nelgen Estolonio</span>. All Rights Reserved.</p>
     </footer>
 
     <!-- Bootstrap JS -->
